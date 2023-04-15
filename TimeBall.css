@@ -1,0 +1,13 @@
+h1 {
+    font-size: 4.5em;
+}
+
+#watchInputForm {
+    font-size: 3em;
+}
+
+input {
+    border-radius: 0.25em;
+    border-style: ridge;
+    border-color: #0d6dfd75;
+}
