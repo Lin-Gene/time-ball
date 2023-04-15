@@ -36,6 +36,7 @@ function updateRecord (content) {
     recordsList.append(newEntry);
 }
 
+
 watchInput.addEventListener('submit', function (e) {
     e.preventDefault();
     const timeInput = watchInput.elements.watchTime.value;
@@ -59,6 +60,7 @@ watchInput.addEventListener('submit', function (e) {
     if (currHr === 24) {
         currHr = 00;
     }
+
     updateRecord(`Measured at ${formatTime(currHr)}:${formatTime(currMin)}:${formatTime(currSec)} with a difference of ${difference} seconds`);
     
 });
