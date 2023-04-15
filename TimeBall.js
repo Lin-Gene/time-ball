@@ -6,6 +6,8 @@
 
 const watchInput = document.querySelector("#watchInputForm");
 const recordsList = document.querySelector("#records");
+const clearAll = document.querySelector("#clearAll");
+const removeLast = document.querySelector("#removeLast");
 
 setDefault();
 
@@ -36,13 +38,9 @@ function updateRecord (content) {
     recordsList.append(newEntry);
 }
 
-
 watchInput.addEventListener('submit', function (e) {
     e.preventDefault();
     const timeInput = watchInput.elements.watchTime.value;
-
-    //for debugging
-    console.log(timeInput);
     
     const timeInputArr = timeInput.toString().split(":");
     let inputHr = parseInt(timeInputArr[0]);
@@ -64,6 +62,20 @@ watchInput.addEventListener('submit', function (e) {
     updateRecord(`Measured at ${formatTime(currHr)}:${formatTime(currMin)}:${formatTime(currSec)} with a difference of ${difference} seconds`);
     
 });
+
+// remove all records when "Clear all records" button is clicked
+clearAll.onclick = function() {
+    while (recordsList.hasChildNodes()) {
+        recordsList.removeChild(recordsList.lastChild);
+    }
+}
+
+// remove the most recent record when the "Remove last record" button is clicked
+removeLast.onclick = function() {
+    if (recordsList.hasChildNodes()) {
+        recordsList.removeChild(recordsList.lastChild);
+    }
+}
 
 
 
