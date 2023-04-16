@@ -59,7 +59,7 @@ watchInput.addEventListener('submit', function (e) {
         currHr = 00;
     }
 
-    updateRecord(`Measured at ${formatTime(currHr)}:${formatTime(currMin)}:${formatTime(currSec)} with a difference of ${difference} seconds`);
+    updateRecord(`Measured at ${formatTime(currHr)}:${formatTime(currMin)}:${formatTime(currSec)} on ${today.getMonth()}/${today.getDate()}/${today.getFullYear()} with a difference of ${difference} seconds`);
     
 });
 
